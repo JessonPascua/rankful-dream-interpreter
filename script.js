@@ -1,4 +1,4 @@
-const API_KEY = "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"; // Replace with your API key
+const API_KEY = "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"; // Replace with your API key
 
 document.getElementById("interpretBtn").addEventListener("click", async function() {
     let dream = document.getElementById("dreamInput").value;
@@ -23,9 +23,13 @@ document.getElementById("interpretBtn").addEventListener("click", async function
             })
         });
 
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+
         let data = await response.json();
         document.getElementById("result").innerText = data.choices[0].message.content;
     } catch (error) {
-        document.getElementById("result").innerText = "Error: Unable to interpret the dream.";
+        document.getElementById("result").innerText = `Error: ${error.message}`;
     }
 });
