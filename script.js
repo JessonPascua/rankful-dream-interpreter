@@ -1,4 +1,4 @@
-const API_KEY = "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"; // Replace with your API key
+const API_KEY = "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"; // Replace with your API key
 
 document.getElementById("interpretBtn").addEventListener("click", async function() {
     let dream = document.getElementById("dreamInput").value;
